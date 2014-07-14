@@ -42,10 +42,13 @@ Checkout master branch
 ```git branch -d <name_of_branch>```
 Remove branch
 
-###Managing Files###
-```git rm <file>``` Remove a file that's being tracked in the repo. If you haven't yet added the file to staging, this will produce an error.
+###Managing Files and Directories###
+```git rm <file>``` Remove a file that's being tracked in the repo. If you haven't yet added the file to staging, this will produce an error. You may need to force the removal if the file is staged but not committed: ```git rm -f <file>```
 
-```git rm -r
+
+```git rm -r <directory>``` Remove a directory's worth of files. Also removes the directory. Directories themselves aren't tracked in Git. You may need to force the remove if a file in the directory is staged but not committed: ```git rm -rf <directory>```
+
+```git mv <file> <new-file-name>``` Move a file that's been committed to the repo.
 
 ###Getting Out of Changes
 ```git checkout <file>```
