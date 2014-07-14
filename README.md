@@ -1,4 +1,4 @@
-Get Acquainted With Git
+Get Acquainted With Git*
 =======================
 
 ###Basic Commands
@@ -17,6 +17,9 @@ Adds all the files in the current directory to staging.
 
 ```git commit -m "Add file to repo"```
 Commit staged files to the repo
+
+```git commit --ammend -m "New Message"```
+Changes the commit message for the last commit
 
 ```git log```
 Show a log of all commits.
@@ -49,6 +52,8 @@ Remove branch
 ```git rm -r <directory>``` Remove a directory's worth of files. Also removes the directory. Directories themselves aren't tracked in Git. You may need to force the remove if a file in the directory is staged but not committed: ```git rm -rf <directory>```
 
 ```git mv <file> <new-file-name>``` Move a file that's been committed to the repo.
+
+```git mv <directory> <new-directory-name>``` Move a directory (and its files).
 
 ###Getting Out of Changes
 ```git checkout <file>```
@@ -92,4 +97,4 @@ If things gets TOTALLY messed up in your working branch, you can just switch bac
 Then just follow steps 1-7 again.
 
 
-
+###*This just covers some basic Git commands. Doesn't cover remote repos, ```push``` or ```pull```
