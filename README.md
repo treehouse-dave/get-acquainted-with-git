@@ -1,4 +1,4 @@
-Get Acquainted With Git*
+Get Acquainted With Git[*](#this-just-covers-some-basic-git-commands-doesnt-cover-remote-repos-push-or-pull)
 =======================
 
 ###Basic Commands
