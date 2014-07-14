@@ -1,4 +1,4 @@
-get-acquainted-with-git
+Get Acquainted With Git
 =======================
 
 ###Basic Commands
