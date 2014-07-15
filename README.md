@@ -79,13 +79,13 @@ Return to master branch and merge changes from <name_of_branch> branch
 
 ####Revert Commits
 
-```git reset --soft HEAD^``` Undo last commit of entire repo, but leave files modified.
+```git reset --soft HEAD^``` Undo last commit of entire repo, but leave files staged.
 
 ```git reset --hard HEAD^``` Completely blow away last commit. Changes files to state of previous commit. Be careful -- ```--hard``` can 
 
 ```git reset --hard HEAD^^``` Completely blow away last two commits. Changes files to state of previous commit.
 
-```git reset --hard HEAD^^``` Completely blow away last commit. Changes files to state of previous commit.
+```git reset --hard HEAD^^^``` Completely blow away last three commits. Changes files to state prior to last third commit.
 
 ```git reset --hard <sha-of-commit>``` Returns files to state they were in after specificed commit
 
