@@ -13,13 +13,19 @@ Show me the current status of the repository. Shows
 * **Staged files** -- files that have been added but not commited
 
 ```git add .```
-Adds all the files in the current directory to staging.
+Adds all the files in the current directory to stagin.
+
+```git add <path/to/file>```
+Adds specified file to staging
 
 ```git commit -m "Add file to repo"```
 Commit staged files to the repo
 
 ```git commit --ammend -m "New Message"```
 Changes the commit message for the last commit
+
+```git commit -a -m "New Message"```
+Let's you add **and** commit all tracked, modified files in one step.
 
 ```git log```
 Show a log of all commits.
@@ -45,29 +51,39 @@ Checkout master branch
 ```git branch -d <name_of_branch>```
 Remove branch
 
+```git checkout master```<br>
+```git merge <name_of_branch>```
+Return to master branch and merge changes from <name_of_branch> branch
+
 ###Managing Files and Directories###
-```git rm <file>``` Remove a file that's being tracked in the repo. If you haven't yet added the file to staging, this will produce an error. You may need to force the removal if the file is staged but not committed: ```git rm -f <file>```
+```git rm <path/to/file>``` Remove a file that's being tracked in the repo. If you haven't yet added the file to staging, this will produce an error. You may need to force the removal if the file is staged but not committed: ```git rm -f <path/to/file>```
 
 
-```git rm -r <directory>``` Remove a directory's worth of files. Also removes the directory. Directories themselves aren't tracked in Git. You may need to force the remove if a file in the directory is staged but not committed: ```git rm -rf <directory>```
+```git rm -r <path/to/directory>``` Remove a directory's worth of files. Also removes the directory. Directories themselves aren't tracked in Git. You may need to force the remove if a file in the directory is staged but not committed: ```git rm -rf <path/to/directory>```
 
-```git mv <file> <new-file-name>``` Move a file that's been committed to the repo.
+```git mv <path/to/file> <path/to/new-file-name>``` Move a file that's been committed to the repo.
 
-```git mv <directory> <new-directory-name>``` Move a directory (and its files).
+```git mv <path/to/directory> <path/to/new-directory-name>``` Move a directory (and its files).
 
 ###Getting Out of Changes
-```git checkout <file>```
-If you've made changes to a file that is 
+####File Fixes
+```git reset HEAD <path/to/file>``` Unstage a file. (HEAD represents the current commit)
+
+```git checkout <path/to/file>```
+If you've mistakenly changed a file that is 
 
 * currently being tracked
-* has NOT been added to the stage
+* has NOT been added to the stage (not ready to be committed)
 
-```git reset HEAD <file>``` 
-If you've made changes to a file that is
+```git checkout HEAD^ <path/to/file>```  (HEAD^ represents the prior commit)
 
-* currently being tracked 
-* HAS been added to the stage
+####Revert Commits
 
+```git reset --soft HEAD^``` Revert last commit of entire repo, but leave files modified.
+
+```git reset --hard HEAD^``` Completely blow away last commit. Reverts to previous commit, changes files.
+
+```git reset --hard <sha-of-commit>``` Reverts to specified commit, changes files.
 
 
 
@@ -97,4 +113,4 @@ If things gets TOTALLY messed up in your working branch, you can just switch bac
 Then just follow steps 1-7 again.
 
 
-###*This just covers some basic Git commands. Doesn't cover remote repos, ```push``` or ```pull```
+####*This just covers some basic Git commands. Doesn't cover remote repos, ```push``` or ```pull```
