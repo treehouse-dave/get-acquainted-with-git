@@ -21,7 +21,7 @@ Adds specified file to staging
 ```git commit -m "Add file to repo"```
 Commit staged files to the repo
 
-```git commit --ammend -m "New Message"```
+```git commit --amend -m "New Message"```
 Changes the commit message for the last commit
 
 ```git commit -a -m "New Message"```
@@ -69,22 +69,30 @@ Return to master branch and merge changes from <name_of_branch> branch
 ####File Fixes
 ```git reset HEAD <path/to/file>``` Unstage a file. (HEAD represents the current commit)
 
-```git checkout <path/to/file>```
-If you've mistakenly changed a file that is 
+```git reset HEAD``` Unstage **all** staged files. 
 
-* currently being tracked
-* has NOT been added to the stage (not ready to be committed)
+```git checkout <path/to/file>``` To revert to the last committed version of a file but only if a) the file has been committed and b) is not currently in staging
 
-```git checkout HEAD^ <path/to/file>```  (HEAD^ represents the prior commit)
+```git checkout HEAD^ <path/to/file>``` Revert to version of file from prior commit (HEAD^ represents the prior commit). Careful: theis overwrites changes to files in your working branch.
+
+```git checkout <sha-of-commit> <path/to/file>``` Revert to version of file from specific commit
 
 ####Revert Commits
 
-```git reset --soft HEAD^``` Revert last commit of entire repo, but leave files modified.
+```git reset --soft HEAD^``` Undo last commit of entire repo, but leave files modified.
 
-```git reset --hard HEAD^``` Completely blow away last commit. Reverts to previous commit, changes files.
+```git reset --hard HEAD^``` Completely blow away last commit. Changes files to state of previous commit. Be careful -- ```--hard``` can 
 
-```git reset --hard <sha-of-commit>``` Reverts to specified commit, changes files.
+```git reset --hard HEAD^^``` Completely blow away last two commits. Changes files to state of previous commit.
 
+```git reset --hard HEAD^^``` Completely blow away last commit. Changes files to state of previous commit.
+
+```git reset --hard <sha-of-commit>``` Returns files to state they were in after specificed commit
+
+###Finding Differences Between Versions
+```git diff``` View differences between current working files and staging area (or if files aren't staged compare working with last commit).
+
+```git diff <path/to/file>``` View differences between current working file and staging area (or if file isn't staged compare working with last commit).
 
 
 ###A Simple Workflow
