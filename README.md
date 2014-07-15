@@ -18,6 +18,8 @@ Adds all the files in the current directory to stagin.
 ```git add -A```
 Adds all files in the current repo.
 
+```git add -p```
+
 ```git add <path/to/file>```
 Adds specified file to staging
 
@@ -27,7 +29,7 @@ Commit staged files to the repo
 ```git commit --amend -m "New Message"```
 Changes the commit message for the last commit
 
-```git commit -a -m "New Message"```
+```git commit -am "New Message"```
 Let's you add **and** commit all tracked, modified files in one step.
 
 ```git log```
