@@ -116,7 +116,7 @@ Just to check and make sure that there are no outstanding changes that have yet 
 If things gets TOTALLY messed up in your working branch, you can just switch back to the master branch and delete the working branch:
 
 1. ```git checkout master```
-2. ```git branch -d <working_branch_name>```
+2. ```git branch -D <working_branch_name>```
 
 Then just follow steps 1-7 again.
 
