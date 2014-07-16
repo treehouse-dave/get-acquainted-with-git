@@ -103,7 +103,7 @@ Return to master branch and merge changes from <name_of_branch> branch
 
 
 ###A Simple Workflow
-**Don't work on the master branch.**<br> Always create a new working branch. Make changes to that branch, then merge them into the master branch when done.
+**Don't work on the master branch.**<br> Master branch should hold your working, production files. Don't mess with them. When you need to fix something, or add a new feature to your project, create a new working branch. Make changes to that branch, then merge them into the master branch when done. You can then deploy your master branch (push it up to a web server, for example)
 
 1. Make sure master is up-to-date.
 Add and commit files, if there are any.
@@ -119,6 +119,8 @@ Just to check and make sure that there are no outstanding changes that have yet 
 ```git merge <working_branch_name>```
 7. Remove branch<br>
 ```git -d branch <working_branch_name>```
+8. Deploy master (push to web server for example).
+9. Repeat steps 1-8 for your next feature/set of changes.
 
 If things gets TOTALLY messed up in your working branch, you can just switch back to the master branch and delete the working branch:
 
