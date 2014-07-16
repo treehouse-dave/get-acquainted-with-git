@@ -38,6 +38,15 @@ Show a log of all commits.
 ```git log --oneline```
 Show a log of all commits, one line per commit
 
+```git diff```
+Show differences between working tree and staging (or last commit)
+
+```git diff -- staged```
+Show differences between staged changes and repositorty
+
+```git diff -- <path to file/path to directory>```
+Show differences for specific file or directory
+
 ###Managing Files and Directories###
 ```git rm <path/to/file>``` Remove a file that's being tracked in the repo. If you haven't yet added the file to staging, this will produce an error. You may need to force the removal if the file is staged but not committed: ```git rm -f <path/to/file>```
 
