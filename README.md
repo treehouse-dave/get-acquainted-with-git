@@ -35,7 +35,7 @@ Let's you add **and** commit all tracked, modified files in one step.
 ```git log```
 Show a log of all commits.
 
-```git log --pretty=oneline```
+```git log --oneline```
 Show a log of all commits, one line per commit
 
 ###Managing Files and Directories###
