@@ -95,6 +95,8 @@ Return to master branch and merge changes from <name_of_branch> branch
 
 ####Revert Commits
 
+```git commit --amend -m "New commit message"``` Change the message used for last commit. Creates a new commit hash.
+
 ```git reset --soft HEAD^``` Undo last commit of entire repo, but leave files staged.
 
 ```git reset --hard HEAD^``` Completely blow away last commit. Changes files to state of previous commit. 
