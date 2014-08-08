@@ -16,9 +16,13 @@ Show me the current status of the repository. Shows
 Adds all the files in the current directory to stagin.
 
 ```git add -A```
-Adds all files in the current repo.
+Adds all files in the current repo (even new files that are not yet tracked)
+
+```git add -u```
+Add all files that are already being tracked (ignore new files)
 
 ```git add -p```
+Add just parts of changes to a file. "p" stands for patch and lets you go through each section of a file that has changed and add (stage) just parts of the file
 
 ```git add <path/to/file>```
 Adds specified file to staging
