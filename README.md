@@ -46,7 +46,7 @@ Show a log of all commits, one line per commit
 Show differences between working tree and staging (or last commit)
 
 ```git diff -- staged```
-Show differences between staged changes and repositorty
+Show differences between staged changes and repository
 
 ```git diff -- <path to file/path to directory>```
 Show differences for specific file or directory
