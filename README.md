@@ -36,6 +36,8 @@ Changes the commit message for the last commit
 ```git commit -am "New Message"```
 Let's you add **and** commit all tracked, modified files in one step.
 
+```git commit --amend -m "New commit message"``` Replace last commit. Use this if you forgot something that you wanted to inlcude in the last commit. Creates a new Git SHA.
+
 ```git log```
 Show a log of all commits.
 
@@ -98,8 +100,6 @@ Return to master branch and merge changes from <name_of_branch> branch
 ```git checkout <sha-of-commit> <path/to/file>``` Revert to version of file from specific commit
 
 ####Revert Commits
-
-```git commit --amend -m "New commit message"``` Change the message used for last commit. Creates a new commit.
 
 ```git reset --soft HEAD^``` Undo last commit of entire repo, but leave files staged.
 
