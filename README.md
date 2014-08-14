@@ -13,7 +13,7 @@ Show me the current status of the repository. Shows
 * **Staged files** -- files that have been added but not commited
 
 ```git add .```
-Adds all the files in the current directory to stagin.
+Adds all the files in the current directory to staging.
 
 ```git add -A```
 Adds all files in the current repo (even new files that are not yet tracked)
@@ -42,7 +42,7 @@ Let's you add **and** commit all tracked, modified files in one step.
 Show a log of all commits.
 
 ```git log --oneline```
-Show a log of all commits, one line per commit
+Show a log of all commits, one line per commit. Can make this the default by ```git config format.pretty oneline``` 
 
 ```git diff```
 Show differences between working tree and staging (or last commit)
@@ -99,7 +99,8 @@ Return to master branch and merge changes from <name_of_branch> branch
 
 ```git checkout <sha-of-commit> <path/to/file>``` Revert to version of file from specific commit
 
-####Revert Commits
+####Undo Commits
+Be careful with these commands when working on a shared repository -- for example with Github. Resetting commits changes the "history" of the repo -- so only use it to back out of local commits that haven **not** been pushed to a shared repository.
 
 ```git reset --soft HEAD^``` Undo last commit of entire repo, but leave files staged.
 
@@ -115,6 +116,8 @@ Return to master branch and merge changes from <name_of_branch> branch
 ```git diff``` View differences between current working files and staging area (or if files aren't staged compare working with last commit).
 
 ```git diff <path/to/file>``` View differences between current working file and staging area (or if file isn't staged compare working with last commit).
+
+```git diff --staged``` View differences between staged files and last commit.
 
 
 ###A Simple Workflow
