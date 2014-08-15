@@ -147,5 +147,11 @@ If things gets TOTALLY messed up in your working branch, you can just switch bac
 
 Then just follow steps 1-7 again.
 
+###Useful Configuration Options
+```git config --global alias.st status``` Let's you just type ```git st``` whenever you want to see the status of the repo
+
+```git config --global alias.co checkout``` Let's you just type ```git co``` whenever you want to checkout a branch
+
+```git config --global alias.ci commit``` Let's you just type ```git ci``` whenever you want run a commit
 
 ####*This just covers some basic Git commands. Doesn't cover remote repos, ```push``` or ```pull```
