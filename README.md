@@ -81,7 +81,10 @@ See a list of all branchs, highlights the currently checked out branch
 Checkout master branch
 
 ```git branch -d <name_of_branch>```
-Remove branch
+Remove branch locally. The branch must be fully merged in its upstream branch.
+
+```git branch -D <name_of_branch>```
+Remove branch locally irrespective of its merged status.
 
 ```git checkout master```<br>
 ```git merge <name_of_branch>```
