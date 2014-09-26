@@ -98,7 +98,7 @@ Return to master branch and merge changes from <name_of_branch> branch
 
 ```git checkout <path/to/file>``` To revert to the last committed version of a file but only if a) the file has been committed and b) is not currently in staging
 
-```git checkout HEAD^ <path/to/file>``` Revert to version of file from prior commit (HEAD^ represents the prior commit). Careful: theis overwrites changes to files in your working branch.
+```git checkout HEAD^ <path/to/file>``` Revert to version of file from prior commit (HEAD^ represents the prior commit). Careful: this overwrites changes to files in your working branch.
 
 ```git checkout <sha-of-commit> <path/to/file>``` Revert to version of file from specific commit
 
