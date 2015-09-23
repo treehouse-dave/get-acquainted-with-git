@@ -139,7 +139,7 @@ Just to check and make sure that there are no outstanding changes that have yet 
 6. Merge changes from working branch<br>
 ```git merge <working_branch_name>```
 7. Remove branch<br>
-```git -d branch <working_branch_name>```
+```git branch -d <working_branch_name>```
 8. Deploy master (push to web server for example).
 9. Repeat steps 1-8 for your next feature/set of changes.
 
