@@ -1,0 +1,110 @@
+<h1 id="get-acquainted-with-git">Get Acquainted With Git<a href="#this-just-covers-some-basic-git-commands-doesnt-cover-remote-repos-push-or-pull">*</a></h1>
+<h3 id="basic-commands">Basic Commands</h3>
+<p><code>git init</code>
+Creates a new Git repository in the current directory. In addition, a directory named <strong>.git</strong> is added to the folder. This folder holds all the Git history and information for the repo. To get rid of the repo, just delete the .git folder</p>
+<p><code>git status</code>
+Show me the current status of the repository. Shows</p>
+<ul>
+<li><strong>Untracked files</strong> -- new files that have not be added to the staging or committed</li>
+<li><strong>Files that are tracked, have been changed but have not been staged</strong></li>
+<li><strong>Staged files</strong> -- files that have been added but not commited</li>
+</ul>
+<p><code>git add .</code>
+Adds all the files in the current directory to staging.</p>
+<p><code>git add -A</code>
+Adds all files in the current repo (even new files that are not yet tracked)</p>
+<p><code>git add -u</code>
+Add all files that are already being tracked (ignore new files)</p>
+<p><code>git add -p</code>
+Add just parts of changes to a file. "p" stands for patch and lets you go through each section of a file that has changed and add (stage) just parts of the file</p>
+<p><code>git add &lt;path/to/file&gt;</code>
+Adds specified file to staging</p>
+<p><code>git commit -m "Add file to repo"</code>
+Commit staged files to the repo</p>
+<p><code>git commit --amend -m "New Message"</code>
+Changes the commit message for the last commit</p>
+<p><code>git commit -am "New Message"</code>
+Let's you add <strong>and</strong> commit all tracked, modified files in one step.</p>
+<p><code>git commit --amend -m "New commit message"</code> Replace last commit. Use this if you forgot something that you wanted to inlcude in the last commit. Creates a new Git SHA.</p>
+<p><code>git log</code>
+Show a log of all commits.</p>
+<p><code>git log --oneline</code>
+Show a log of all commits, one line per commit. Can make this the default by <code>git config format.pretty oneline</code> </p>
+<p><code>git diff</code>
+Show differences between working tree and staging (or last commit)</p>
+<p><code>git diff -- staged</code>
+Show differences between staged changes and repository</p>
+<p><code>git diff -- &lt;path to file/path to directory&gt;</code>
+Show differences for specific file or directory</p>
+<h3 id="managing-files-and-directories">Managing Files and Directories</h3>
+<p><code>git rm &lt;path/to/file&gt;</code> Remove a file that's being tracked in the repo. If you haven't yet added the file to staging, this will produce an error. You may need to force the removal if the file is staged but not committed: <code>git rm -f &lt;path/to/file&gt;</code></p>
+<p><code>git rm -r &lt;path/to/directory&gt;</code> Remove a directory's worth of files. Also removes the directory. Directories themselves aren't tracked in Git. You may need to force the remove if a file in the directory is staged but not committed: <code>git rm -rf &lt;path/to/directory&gt;</code></p>
+<p><code>git mv &lt;path/to/file&gt; &lt;path/to/new-file-name&gt;</code> Move a file that's been committed to the repo.</p>
+<p><code>git mv &lt;path/to/directory&gt; &lt;path/to/new-directory-name&gt;</code> Move a directory (and its files).</p>
+<h3 id="creating-and-using-branches">Creating and Using Branches</h3>
+<p><code>git checkout -b &lt;name_of_branch&gt;</code>
+Create a branch and check it out in one step</p>
+<p><code>git branch &lt;name_of_branch&gt;</code>
+Create a branch, but stay in current branch.</p>
+<p><code>git checkout &lt;name_of_branch&gt;</code>
+Check out an already created branch</p>
+<p><code>git branch</code>
+See a list of all branchs, highlights the currently checked out branch</p>
+<p><code>git checkout master</code>
+Checkout master branch</p>
+<p><code>git branch -d &lt;name_of_branch&gt;</code>
+Remove branch locally, but only if you've merged branch.</p>
+<p><code>git branch -D &lt;name_of_branch&gt;</code>
+Remove branch even if you haven't merged changes.</p>
+<p><code>git checkout master</code><br>
+<code>git merge &lt;name_of_branch&gt;</code>
+Return to master branch and merge changes from <name_of_branch> branch</p>
+<h3 id="getting-out-of-changes">Getting Out of Changes</h3>
+<h4 id="file-fixes">File Fixes</h4>
+<p><code>git reset HEAD &lt;path/to/file&gt;</code> Unstage a file. (HEAD represents the current commit)</p>
+<p><code>git reset HEAD</code> Unstage <strong>all</strong> staged files. </p>
+<p><code>git checkout &lt;path/to/file&gt;</code> To revert to the last committed version of a file but only if a) the file has been committed and b) is not currently in staging</p>
+<p><code>git checkout HEAD^ &lt;path/to/file&gt;</code> Revert to version of file from prior commit (HEAD^ represents the prior commit). Careful: this overwrites changes to files in your working branch.</p>
+<p><code>git checkout &lt;sha-of-commit&gt; &lt;path/to/file&gt;</code> Revert to version of file from specific commit</p>
+<h4 id="undo-commits">Undo Commits</h4>
+<p>Be careful with these commands when working on a shared repository -- for example with Github. Resetting commits changes the "history" of the repo -- so only use it to back out of local commits that haven <strong>not</strong> been pushed to a shared repository.</p>
+<p><code>git reset --soft HEAD^</code> Undo last commit of entire repo, but leave files staged.</p>
+<p><code>git reset --hard HEAD^</code> Completely blow away last commit. Changes files to state of previous commit. </p>
+<p><code>git reset --hard HEAD^^</code> Completely blow away last two commits. Changes files to state of previous commit.</p>
+<p><code>git reset --hard HEAD^^^</code> Completely blow away last three commits. Changes files to state prior to last third commit.</p>
+<p><code>git reset --hard &lt;sha-of-commit&gt;</code> Returns files to state they were in after specificed commit</p>
+<h3 id="finding-differences-between-versions">Finding Differences Between Versions</h3>
+<p><code>git diff</code> View differences between current working files and staging area (or if files aren't staged compare working with last commit).</p>
+<p><code>git diff &lt;path/to/file&gt;</code> View differences between current working file and staging area (or if file isn't staged compare working with last commit).</p>
+<p><code>git diff --staged</code> View differences between staged files and last commit.</p>
+<h3 id="a-simple-workflow">A Simple Workflow</h3>
+<p><strong>Don't work on the master branch.</strong><br> Master branch should hold your working, production files. Don't mess with them. When you need to fix something, or add a new feature to your project, create a new working branch. Make changes to that branch, then merge them into the master branch when done. You can then deploy your master branch (push it up to a web server, for example)</p>
+<ol>
+<li>Make sure master is up-to-date.
+Add and commit files, if there are any.</li>
+<li>Create and checkout a new working branch:<br>
+<code>git checkout -b &lt;working_branch_name&gt;</code></li>
+<li>Make changes to this branch. Make sure to add files and make commits along the way.</li>
+<li>When done with branch:<br>
+<code>git status</code>
+Just to check and make sure that there are no outstanding changes that have yet to be committed. <strong>If there are, add and commit files.</strong></li>
+<li>Switch back to master<br>
+<code>git checkout master</code></li>
+<li>Merge changes from working branch<br>
+<code>git merge &lt;working_branch_name&gt;</code></li>
+<li>Remove branch<br>
+<code>git branch -d &lt;working_branch_name&gt;</code></li>
+<li>Deploy master (push to web server for example).</li>
+<li>Repeat steps 1-8 for your next feature/set of changes.</li>
+</ol>
+<p>If things gets TOTALLY messed up in your working branch, you can just switch back to the master branch and delete the working branch:</p>
+<ol>
+<li><code>git checkout master</code></li>
+<li><code>git branch -D &lt;working_branch_name&gt;</code></li>
+</ol>
+<p>Then just follow steps 1-7 again.</p>
+<h3 id="useful-configuration-options">Useful Configuration Options</h3>
+<p><code>git config --global alias.st status</code> Let's you just type <code>git st</code> whenever you want to see the status of the repo</p>
+<p><code>git config --global alias.co checkout</code> Let's you just type <code>git co</code> whenever you want to checkout a branch</p>
+<p><code>git config --global alias.ci commit</code> Let's you just type <code>git ci</code> whenever you want run a commit</p>
+<h4 id="this-just-covers-some-basic-git-commands-doesnt-cover-remote-repos-push-or-pull">*This just covers some basic Git commands. Doesn't cover remote repos, <code>push</code> or <code>pull</code></h4>
