@@ -158,3 +158,5 @@ Then just follow steps 1-7 again.
 ```git config --global alias.ci commit``` Let's you just type ```git ci``` whenever you want run a commit
 
 ####*This just covers some basic Git commands. Doesn't cover remote repos, ```push``` or ```pull```
+
+Andrew's a poopyhead
