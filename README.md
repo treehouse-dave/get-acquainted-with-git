@@ -34,7 +34,7 @@ Commit staged files to the repo
 Changes the commit message for the last commit
 
 ```git commit -am "New Message"```
-Let's you add **and** commit all tracked, modified files in one step.
+Lets you add **and** commit all tracked, modified files in one step.
 
 ```git commit --amend -m "New commit message"``` Replace last commit. Use this if you forgot something that you wanted to inlcude in the last commit. Creates a new Git SHA.
 
@@ -151,10 +151,10 @@ If things gets TOTALLY messed up in your working branch, you can just switch bac
 Then just follow steps 1-7 again.
 
 ###Useful Configuration Options
-```git config --global alias.st status``` Let's you just type ```git st``` whenever you want to see the status of the repo
+```git config --global alias.st status``` Lets you just type ```git st``` whenever you want to see the status of the repo
 
-```git config --global alias.co checkout``` Let's you just type ```git co``` whenever you want to checkout a branch
+```git config --global alias.co checkout``` Lets you just type ```git co``` whenever you want to checkout a branch
 
-```git config --global alias.ci commit``` Let's you just type ```git ci``` whenever you want run a commit
+```git config --global alias.ci commit``` Lets you just type ```git ci``` whenever you want run a commit
 
 ####*This just covers some basic Git commands. Doesn't cover remote repos, ```push``` or ```pull```
