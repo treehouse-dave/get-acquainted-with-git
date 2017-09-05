@@ -1,7 +1,7 @@
 Get Acquainted With Git[*](#this-just-covers-some-basic-git-commands-doesnt-cover-remote-repos-push-or-pull)
 =======================
 
-###Basic Commands
+### Basic Commands
 ```git init```
 Creates a new Git repository in the current directory. In addition, a directory named **.git** is added to the folder. This folder holds all the Git history and information for the repo. To get rid of the repo, just delete the .git folder
 
@@ -53,7 +53,7 @@ Show differences between staged changes and repository
 ```git diff -- <path to file/path to directory>```
 Show differences for specific file or directory
 
-###Managing Files and Directories###
+### Managing Files and Directories
 ```git rm <path/to/file>``` Remove a file that's being tracked in the repo. If you haven't yet added the file to staging, this will produce an error. You may need to force the removal if the file is staged but not committed: ```git rm -f <path/to/file>```
 
 
@@ -63,7 +63,7 @@ Show differences for specific file or directory
 
 ```git mv <path/to/directory> <path/to/new-directory-name>``` Move a directory (and its files).
 
-###Creating and Using Branches
+### Creating and Using Branches
 
 ```git checkout -b <name_of_branch>```
 Create a branch and check it out in one step
@@ -90,8 +90,8 @@ Remove branch even if you haven't merged changes.
 ```git merge <name_of_branch>```
 Return to master branch and merge changes from <name_of_branch> branch
 
-###Getting Out of Changes
-####File Fixes
+### Getting Out of Changes
+#### File Fixes
 ```git reset HEAD <path/to/file>``` Unstage a file. (HEAD represents the current commit)
 
 ```git reset HEAD``` Unstage **all** staged files. 
@@ -102,7 +102,7 @@ Return to master branch and merge changes from <name_of_branch> branch
 
 ```git checkout <sha-of-commit> <path/to/file>``` Revert to version of file from specific commit
 
-####Undo Commits
+#### Undo Commits
 Be careful with these commands when working on a shared repository -- for example with Github. Resetting commits changes the "history" of the repo -- so only use it to back out of local commits that haven **not** been pushed to a shared repository.
 
 ```git reset --soft HEAD^``` Undo last commit of entire repo, but leave files staged.
@@ -115,7 +115,7 @@ Be careful with these commands when working on a shared repository -- for exampl
 
 ```git reset --hard <sha-of-commit>``` Returns files to state they were in after specificed commit
 
-###Finding Differences Between Versions
+### Finding Differences Between Versions
 ```git diff``` View differences between current working files and staging area (or if files aren't staged compare working with last commit).
 
 ```git diff <path/to/file>``` View differences between current working file and staging area (or if file isn't staged compare working with last commit).
@@ -123,7 +123,7 @@ Be careful with these commands when working on a shared repository -- for exampl
 ```git diff --staged``` View differences between staged files and last commit.
 
 
-###A Simple Workflow
+### A Simple Workflow
 **Don't work on the master branch.**<br> Master branch should hold your working, production files. Don't mess with them. When you need to fix something, or add a new feature to your project, create a new working branch. Make changes to that branch, then merge them into the master branch when done. You can then deploy your master branch (push it up to a web server, for example)
 
 1. Make sure master is up-to-date.
@@ -150,11 +150,11 @@ If things gets TOTALLY messed up in your working branch, you can just switch bac
 
 Then just follow steps 1-7 again.
 
-###Useful Configuration Options
+### Useful Configuration Options
 ```git config --global alias.st status``` Lets you just type ```git st``` whenever you want to see the status of the repo
 
 ```git config --global alias.co checkout``` Lets you just type ```git co``` whenever you want to checkout a branch
 
 ```git config --global alias.ci commit``` Lets you just type ```git ci``` whenever you want run a commit
 
-####*This just covers some basic Git commands. Doesn't cover remote repos, ```push``` or ```pull```
+#### *This just covers some basic Git commands. Doesn't cover remote repos, ```push``` or ```pull```
