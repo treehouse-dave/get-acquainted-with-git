@@ -105,6 +105,9 @@ Return to master branch and merge changes from <name_of_branch> branch
 #### Undo Commits
 Be careful with these commands when working on a shared repository -- for example with Github. Resetting commits changes the "history" of the repo -- so only use it to back out of local commits that haven **not** been pushed to a shared repository.
 
+*git branch <name_of_backup_branch>* **Precaution: always create a backup branch before doing any undo commits.**
+*git merge <name_of_backup_branch>*  **If anything goes wrong during undo commits, you can always roll back to normal using the backup branch.**
+
 ```git reset --soft HEAD^``` Undo last commit of entire repo, but leave files staged.
 
 ```git reset --hard HEAD^``` Completely blow away last commit. Changes files to state of previous commit. 
